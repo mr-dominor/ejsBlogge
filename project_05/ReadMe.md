@@ -1,0 +1,1 @@
+This project is same as project_04 i.e. a url shortening service; just a front is added, that too not a normal one, its done via server side rendering
