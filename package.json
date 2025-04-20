@@ -1,15 +1,25 @@
 {
+<<<<<<< HEAD
   "name": "newblogdeployed",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+=======
+  "name": "node-practice-2",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+>>>>>>> d7329d1c986cb9e050dd46e7870bc971f5d62f06
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
+<<<<<<< HEAD
   "dependencies": {
     "bootstrap": "^5.3.5",
     "cookie-parser": "^1.4.7",
@@ -21,5 +31,14 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
+=======
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2",
+    "url": "^0.11.4"
+>>>>>>> d7329d1c986cb9e050dd46e7870bc971f5d62f06
   }
 }
