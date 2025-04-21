@@ -5,6 +5,9 @@
 </head>
 <body>
     <%- include('./partials/navbar.ejs') %>
+    <% if (locals.msg) { %>
+        <p><%= locals.msg %></p>
+    <% } %>
     <%- include('./partials/signup.partials.ejs') %>
     <%- include('./partials/script.ejs') %>
 </body>

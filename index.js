@@ -24,7 +24,7 @@ app.set("view engine","ejs");
 app.set("views",path.resolve("./views"))
 
 //routes
-app.use('/',(req,res)=>{
+app.get('/',(req,res)=>{
     return res.render("home",{
         user:req.user
     })

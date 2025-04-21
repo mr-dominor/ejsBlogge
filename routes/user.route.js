@@ -5,7 +5,7 @@ const userRouter = express.Router();
 
 userRouter.route('/signup')
    .get((req,res)=>{
-      return res.render("signup")
+      return res.render("signup",{msg:"Reached here"})
    })
    .post(handleSignup);
 

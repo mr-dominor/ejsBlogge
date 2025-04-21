@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <% if (locals.msg) { %>
+        <div class="alert alert-danger" role="alert">
+            <%= locals.msg %>
+          </div>
+    <% } %>
+    <%- include('./partials/blogUp.ejs') %>
+    <%- include('./partials/script.ejs') %>
+</body>
+</html>
