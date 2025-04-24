@@ -5,6 +5,24 @@
 </head>
 <body>
     <%- include('./partials/navbar.ejs') %>
+
+    <div class="container mt-3 fixed-container">
+        <div class="row row-cols-2">
+            <% if (blogs && blogs.length > 0) { %>
+                <% blogs.forEach(blog => { %>
+                    <div class="card" style="width: 18rem;">
+                        <img src="/uploads/<%= blog.preview %>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= blog.title %></h5>
+                            <a href="/blog/<%= blog.id %>" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>No blogs available.</p>
+            <% } %>
+        </div>
+    </div>
     <%- include('./partials/script.ejs') %>
 </body>
 </html>

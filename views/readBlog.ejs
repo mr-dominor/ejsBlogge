@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs') %>
+        <div class="container mt-3">
+            <% if (locals.msg) { %>
+                <p>
+                    <%= locals.msg %>
+                </p>
+                <% } %>
+                    <% if (locals.blog) { %>
+                        <h1>
+                            <%= blog.title %>
+                        </h1>
+                        <img src="/uploads/<%=  blog.preview%>" alt="" class="w-50 mt-3">
+                        <p class="mt-4">
+                            <%= blog.description %>
+                        </p>
+                        <% } %>
+                            <% if (locals.user) { %>
+                                <img src="/<%= user.profilePhoto %>" alt="">
+                                <p class="fw-bold">
+                                    <%= JSON.stringify(user.name) %>
+                                </p>
+                                <% } %>
+        </div>
+        <div class="container mt-3">
+            <h2>Comments</h2>
+            <form action="/blog/comments" method="POST" class="mt-4">
+                <input type="hidden" name="blogId" value="<%= locals.blog?._id %>">
+                <textarea name="comment" class="form-control mb-2" placeholder="Write a comment..." required></textarea>
+                <button type="submit" class="btn btn-primary">Post Comment</button>
+            </form>
+        </div>
+        <div class="container mt-3">
+            <% if (locals.comments) { %>
+                    <% comments.forEach(com => { %>
+                        <div class="container rounded-4 mt-1 border p-3 mb-2 bg-primary-subtle text-primary-emphasis">
+                        <p class="fs-4"><%= com.comment %></p>
+                        <p>by: <%= com.createdby.fullName %></p>
+                        </div>
+                    <% }) %>
+                <% } %>
+        </div>
+        <%- include('./partials/script.ejs') %>
+</body>
+
+</html>

@@ -7,11 +7,12 @@ async function handleSignup(req,res){
         const response = await userModel.create({
             fullName,
             email,
-            password
+            password,
+            createdby:req.user?._id
         })
-        console.log(req.body);
+
         if(!response) return res.status(400).json({msg:"failed request"});
-        return res.redirect("/");
+        return res.redirect("/user/signin");
     } catch (error) {
         return res.status(500).json({msg:"Internal error"});
     }
@@ -23,7 +24,6 @@ async function handleSignin(req,res){
     try {
         const token = await userModel.matchPassword(email,password);
         if(!token) return res.redirect('/use/signup');
-        console.log("token from controller::",token);
         return res.cookie("token",token).redirect("/");
     } catch (error) {
         return res.render("signin",{
