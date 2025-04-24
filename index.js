@@ -12,7 +12,7 @@ dotenv.config();
 //constants
 const app = express();
 const url = process.env.MONGO_URL;
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 console.log("MONGO_URL loaded:", process.env.MONGO_URL);
 console.log("PORT loaded:", process.env.PORT);
