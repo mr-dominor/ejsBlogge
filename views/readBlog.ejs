@@ -42,7 +42,7 @@
                     <% comments.forEach(com => { %>
                         <div class="container rounded-4 mt-1 border p-3 mb-2 bg-primary-subtle text-primary-emphasis">
                         <p class="fs-4"><%= com.comment %></p>
-                        <p>by: <%= com.createdby.fullName %></p>
+                        <p>by: <%= com.createdby?.fullName %></p>
                         </div>
                     <% }) %>
                 <% } %>
